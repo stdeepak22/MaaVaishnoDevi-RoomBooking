@@ -1,0 +1,1 @@
+document.querySelector('body > table > tbody > tr > td > table > tbody > tr:nth-child(1) > td > div > span > a').click();

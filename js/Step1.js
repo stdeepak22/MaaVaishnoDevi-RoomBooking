@@ -1,0 +1,1 @@
+window.location = 'https://www.maavaishnodevi.org/onlineservices/login.aspx'

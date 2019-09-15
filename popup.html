@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ticket Booking</title>
+    <script src="popup.js"></script>
+    <style>
+        body {
+            min-width: 270px;
+        }
+
+        .lbl{
+            color: #1e2ef4;
+        }
+
+        .btn {
+            position: relative;
+            background-color: #1e2ef4;
+            padding: 8px;
+            margin: 0px;
+            border-radius: 0px;
+            margin-top: -1px;
+            border-width: 0px;
+            transition: 0.3s;
+            cursor: pointer;
+            opacity: 0.7;
+            color:white;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+        /* .btnWrapper>button.clicked::after {
+            content: '✔';
+            position: absolute;
+            right: 5px;
+            top: 3px;
+            font-size: 18px;
+        } */
+
+        .btnWrapper>button.clicked {
+            opacity: 1;
+        }
+
+        .btnWrapper>button {
+            width: 270px;            
+            text-align: left;
+        }
+        
+        .my-hide {
+            display: none;
+        }
+
+        .my-show {
+            display: block;
+        }
+
+        #btnWrapper2 {            
+            width: 300px;
+        }
+
+        .iconBtn {
+            float: right;            
+            margin-bottom: 5px;
+            border-radius: 10px;
+            height: 20px;                        
+            width: 20px;
+            padding:0px;                                
+        }
+
+        .iconBtn.cog::after{
+            content: '⚙';
+            position: absolute;
+            font-size: 20px;
+            top: -5px;
+            right: 2px;
+            color:white;
+        }
+        .iconBtn.dlt::after{
+            content: '×';
+            position: absolute;
+            font-size: 20px;
+            top: -1px;
+            right: 4px;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn iconBtn cog" id="toggle" title="Setup Data"></button>
+    <div class="btnWrapper" id="btnWrapper">
+        <button class="btn" id="step1">1. Open Site</button>
+        <button class="btn" id="step2">2. Login Page</button>
+        <button class="btn" id="step3">3. Login</button>
+        <button class="btn" id="step4">4. Room Booking Page</button>
+        <button class="btn" id="step5">5. Date, Category and Count</button>
+        <button class="btn" id="step6">6. Bookie Details and Payment Page</button>
+        <button class="btn" id="step7">7. Logout</button>
+    </div>
+    <div class="btnWrapper2 my-hide" id="btnWrapper2">
+        <span class="lbl">Credentials:</span><br/>
+        <input type="text" id="userName" placeholder="Login User Name" style="width:120px"/>
+        <input type="password" id="userPassword" placeholder="Login Password" style="width:120px"/>
+        <br/>
+        <br/>
+        <span class="lbl">Booking Info:</span><br/>
+        <input type="text" id="travelDate" style="width: 80px" placeholder="dd/mm/yyyy"/>        
+        <select id="roomCategory">
+            <option value=undefined style="display: none">Category</option>
+			<option value="1">Rooms</option>
+			<option value="2">Dormitory Beds</option>
+		</select>
+        <select id="noOfBeds" style="width: 90px;" class="my-\">
+            <option value=undefined style="display: none">No of Beds</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br/><br/>
+
+        <span class="lbl">Bookie Details:</span><br/>
+        <select id="bookieIdType" style="width: 130px">
+            <option value=undefined style="display: none">ID Type</option>
+            <option value="AADHAAR">AADHAAR Card</option>
+            <option value="NBPB">Bank Passbook</option>
+            <option value="CRCD">Credit Card</option>
+            <option value="DRLC">Driving License</option>
+            <option value="GOVT">Govt issued I-Card</option>
+            <option value="PANC">Pan Card</option>
+            <option value="PSPT">Passport</option>
+            <option value="STUD">Student I-Card</option>
+            <option value="VOTE">Voter I-Card</option>
+        </select>
+
+        <input type="text" id="bookieIdNo" style="width:130px" placeholder="Bookie PAN Card" /><br/>        
+
+
+        <br/>
+        <button class="btn" id="btnSaveProfile">Save ✔</button>
+        <button class="btn" id="clearProfile" style="float: right;">Clear ×</button>
+        <!-- <button class="btn iconBtn dlt" id="clearProfile" title="Clear Profile" style=""></button>      -->
+    </div>
+</body>
+
+</html>

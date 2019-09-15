@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "Maa Vaishno Devi-Hotel Booking",
+    "description": "extension to book the hotel at Maa Vaishno Dhaam",
+    "version": "1.0",   
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+       },    
+    "permissions": [        
+        "activeTab",
+        "storage",
+        "http://*/*", "https://*/*"    
+        ]
+  }
